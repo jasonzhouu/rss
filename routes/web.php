@@ -11,6 +11,9 @@
 |
 */
 
+// 获取页面的 html, js 文件
+Route::get('/', 'HomeController@index');
+
 // 后端将文章列表分页，前端无论何时获取文章列表时，都要指定是第几页，比如/article_list/{open_id}?page=10
 Route::get('/article_list/{open_id}', 'ArticleController@get_article_list');
 
