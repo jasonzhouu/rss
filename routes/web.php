@@ -18,3 +18,8 @@ Route::get('/article_list/{open_id}', 'ArticleController@get_article_list');
 // open_id, article_id 会被存到数据库的 reading_hitory 表
 // 前端的路由就是 /article_detail/***?open_id=***
 Route::get('/article_detail/{article_id}', 'ArticleController@get_article_detail');
+
+//登录、注册
+Route::post('/register', 'Auth\RegisterController@register');
+Route::post('/login', 'Auth\LoginController@login');
+Route::get('/logout', 'Auth\LogoutController@logout');
