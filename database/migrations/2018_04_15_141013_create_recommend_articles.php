@@ -10,7 +10,7 @@ class CreateRecommendArticles extends Migration
      * Run the migrations.
      *
      * @return void
-     */
+     */ 
     public function up()
     {
         Schema::create('recommend_articles', function (Blueprint $table) {
