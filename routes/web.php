@@ -23,3 +23,11 @@ Route::get('/article_detail/{article_id}', 'ArticleController@get_article_detail
 Route::post('/register', 'Auth\RegisterController@register');
 Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LogoutController@logout');
+
+// 获取阅读历史
+Route::get('/reading_history', 'ReadingHistoryController@get_reading_history_list');
+
+// 收藏文章
+Route::post('/star', 'StarController@star');
+Route::post('/unstar', 'StarController@unstar');
+Route::get('/get_stared_list', 'StarController@get_stared_list');
