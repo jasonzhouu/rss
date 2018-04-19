@@ -9,6 +9,6 @@ class HomeController extends Controller
     //返回主页面
     public function index()
     {
-        return 'index';
+        return view('mobile');
     }
 }
