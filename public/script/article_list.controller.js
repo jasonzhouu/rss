@@ -3,5 +3,6 @@ angular.module('rss')
     $scope.name = 'test'
     console.log($scope.name)
     console.log('*****************')
-    ArticlesListModel.getArticleList();
+    ArticlesListModel.getMoreArticle();
+    $scope.nextPage = ArticlesListModel.getMoreArticle;
 })
