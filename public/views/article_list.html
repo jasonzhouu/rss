@@ -1,12 +1,25 @@
 <div class="weui-panel weui-panel_access">
     <div class="weui-panel__hd">新闻 RSS 源推荐</div>
     
-    <div class="weui-panel__bd">
+    <!-- <div class="weui-panel__bd">
         <rssArticleDirective ng-repeat="article in model.article_list"> </rssArticleDirective>
+    </div> -->
+
+    <div class="weui-panel__bd">
+        <div class="weui-media-box weui-media-box_text">
+            <div ng-repeat="article in model.article_list">
+                <h4 class="weui-media-box__title">
+                    {{article.title}}
+                </h4>
+                <p class="weui-media-box__desc">
+                    {{article.content}}
+                </p>
+            </div>
+        </div>
     </div>
-    
+
     <div class="button-sp-area">
-        <button class="weui-btn weui-btn_plain-primary" ng-click="model.getMoreArticle()">加载</button>
+        <button class="weui-btn weui-btn_plain-primary" ng-click="model.getMoreArticle()" ng-show="model.pageInformation.still_have_next_or_not">加载</button>
     </div>
     <div class="weui-loadmore" ng-show="model.pageInformation.loading">
         <i class="weui-loading"></i>
