@@ -10,7 +10,7 @@ angular.module('rss', [
     'use strict';
     $routeProvider
         .when('/', {
-            templateUrl:'views/articles_list.html',
+            templateUrl:'views/article_list.html',
             controller: 'ArticlesListController'
         }).
         when('/article', {
