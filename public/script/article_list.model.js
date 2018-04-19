@@ -1,25 +1,11 @@
 angular.module('rss')
-    .factory('ArticlesListModel', function ($http, $location, $routeParams, CoursesModel, Upload) {
+    .factory('ArticlesListModel', function ($http) {
         let model = {};
 
-
-        // model.submitCourse = function(courseData) {
-        //     let _method = 'PUT';
-
-        //     Upload.upload({
-        //         url: `/admin/courses/${$routeParams.id}`,
-        //         data: {_method, ...courseData}
-        //     }).then(({data})=>{
-        //         CoursesModel.getNewlyEditedCourse($routeParams.id)
-        //                     .then(()=>{
-        //                         $location.path(`/course/${$routeParams.id}`);
-        //                     })
-        //     }, (data)=>{}, (event)=>{})
-        // };
-
-        // model.cancel = function() {
-        //     CoursesModel.getCourseDetailIfNull($routeParams.id);
-        //     $location.path(`/course/${$routeParams.id}`);
-        // };
+        model.getArticleList = function() {
+            return $http.get('/article_list').then(({data})=>{
+                console.log(data.data);
+            })
+        }
         return model;
     });
