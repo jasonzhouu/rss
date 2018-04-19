@@ -28,6 +28,7 @@
 <script src="script/article_list.controller.js"></script>
 <script src="script/article_list.model.js"></script>
 <script src="script/tab.controller.js"></script>
+<script src="script/course.directive.js"></script>
 <script src="script/article.js"></script>
 <script src="script/login.js"></script>
 <!-- end script -->

@@ -3,6 +3,6 @@ angular.module('rss')
     $scope.name = 'home page'
     console.log($scope.name)
     console.log('*********')
-    $scope.nextPage = ArticlesListModel.getMoreArticle;
-    $scope.articleList = ArticlesListModel.pageInformation.current_page;
+    $scope.model = ArticlesListModel;
+    ArticlesListModel.getMoreArticle();
 })
