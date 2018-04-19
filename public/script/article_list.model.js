@@ -12,7 +12,6 @@ angular.module('rss')
         model.getMoreArticle = function() {
             if(model.pageInformation.still_have_next_or_not) {
                 return $http.get(`/article_list?page=${model.pageInformation.current_page + 1}`).then(({data})=>{
-                    console.log(data)
                     model.article_list = [...model.article_list, ...data.data]
                     model.pageInformation.current_page = data.current_page;
                     model.pageInformation.still_have_next_or_not = (data.to != data.total_page);

@@ -5,4 +5,5 @@ angular.module('rss')
     console.log('*****************')
     ArticlesListModel.getMoreArticle();
     $scope.nextPage = ArticlesListModel.getMoreArticle;
+    $scope.articleList = ArticlesListModel.pageInformation.current_page;
 })
