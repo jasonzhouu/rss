@@ -18,5 +18,12 @@ angular.module('rss')
             })
         }
 
+        model.getStarList = function() {
+            $http.get('/get_stared_list').then(({data})=>{
+                console.log('stared article', data);
+                $location.path('stared_articles');
+            })
+        }
+
         return model;
     });

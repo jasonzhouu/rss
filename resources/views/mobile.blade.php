@@ -31,6 +31,8 @@
 <script src="script/course.directive.js"></script>
 <script src="script/article.controller.js"></script>
 <script src="script/article.model.js"></script>
+<script src="script/star.controller.js"></script>
+<script src="script/star.model.js"></script>
 <script src="script/user.controller.js"></script>
 <script src="script/reading_history.controller.js"></script>
 <script src="script/reading_history.model.js"></script>

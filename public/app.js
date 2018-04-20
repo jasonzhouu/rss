@@ -29,6 +29,10 @@ angular.module('rss', [
             templateUrl: 'views/reading_history.html',
             controller: 'ReadingHistoryController'
         }).
+        when('/stared_articles', {
+            templateUrl: 'views/stared_articles.html',
+            controller: 'StaredArticlesController'
+        }).
         otherwise({
             redirectTo: '/'
         });
