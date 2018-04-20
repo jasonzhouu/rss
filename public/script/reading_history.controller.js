@@ -4,4 +4,6 @@ angular.module('rss')
     console.log($scope.name)
 
     $scope.article_list = UserModel.reading_history;
+
+    $scope.model = ReadingHistoryModel;
 })
