@@ -12,8 +12,8 @@ class ArticleController extends Controller
         return Article::paginate(15);
     }
 
-    public function get_article_detail()
+    public function get_article_detail($article_id)
     {
-        
+        return Article::find($article_id);
     }
 }
