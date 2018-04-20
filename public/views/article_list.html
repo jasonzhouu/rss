@@ -6,15 +6,17 @@
     </div> -->
 
     <div class="weui-panel__bd">
-        <div class="weui-media-box weui-media-box_text">
-            <div ng-repeat="article in model.article_list">
-                <h4 class="weui-media-box__title">
-                    {{article.title}}
-                </h4>
-                <p class="weui-media-box__desc">
-                    {{article.content}}
-                </p>
-            </div>
+        <div ng-repeat="article in model.article_list">
+            <a ng-href='#/article'>
+                <div class="weui-media-box weui-media-box_text" >
+                    <h4 class="weui-media-box__title">
+                        {{article.title}}
+                    </h4>
+                    <p class="weui-media-box__desc">
+                        {{article.content}}
+                    </p>
+                </div>
+            </a>
         </div>
     </div>
 
