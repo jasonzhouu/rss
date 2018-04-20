@@ -7,11 +7,13 @@ angular.module('rss')
 
     $scope.starClick = function() {
         let starInfo = {
-          opened_course_id: $scope.courseDetail.id,
-          user_id: $cookies.get('user_id'),
-          star: $scope.star
+            user_id: 0,
+            // user_id: $cookies.get('user_id'),
+            article_id: ArticleModel.article.id,
+            star: $scope.star,
         };
-        detailModel.star(starInfo);
+        console.log('star info', starInfo);
+        ArticleModel.star(starInfo);
       }
 
     console.log("********", ArticleModel.article)
