@@ -5,7 +5,7 @@ angular.module('rss')
           case '':
             $scope.active = [1,0];
             break;
-          case 'article':
+          case 'user':
             $scope.active = [0,1];
             break;
           default:
