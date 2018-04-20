@@ -6,14 +6,14 @@
         </div> -->
     
         <div class="weui-panel__bd">
-            <div ng-repeat="article in model.article_list">
+            <div ng-repeat="article in article_list">
                 <div ng-click="model.getArticleDetail(article.id)">
                     <div class="weui-media-box weui-media-box_text" >
                         <h4 class="weui-media-box__title">
-                            {{article.title}}
+                            {{article.article.title}}
                         </h4>
                         <p class="weui-media-box__desc">
-                            {{article.content}}
+                            {{article.article.content}}
                         </p>
                     </div>
                 </div>

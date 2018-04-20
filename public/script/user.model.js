@@ -1,5 +1,5 @@
 angular.module('rss')
-    .factory('UserModel', function ($http) {
+    .factory('UserModel', function ($http, $location) {
         let model = {};
 
         model.getStarList = function() {
@@ -10,9 +10,11 @@ angular.module('rss')
         }
 
         model.getHistoryList = function() {
-            $http.get('/reading_history').then((data) => {
+            $http.get('/reading_history').then(({data}) => {
                 console.log('reading history')
-                console.log(data);
+                console.log('reading history', data);
+                model.reading_history = data;
+                $location.path('reading_history');
             })
         }
 
