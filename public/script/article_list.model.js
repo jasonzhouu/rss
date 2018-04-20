@@ -1,5 +1,5 @@
 angular.module('rss')
-    .factory('ArticlesListModel', function ($http) {
+    .factory('ArticlesListModel', function ($http, $location) {
         let model = {};
 
         model.article_list= [];
@@ -25,6 +25,15 @@ angular.module('rss')
                 console.log('no return')
                 return false;
             }
+        }
+
+        model.getArticleDetail = function(article_id) {
+            console.log('article click')
+            $http.get(`/article_detail/${article_id}`).then(({data})=>{
+                model.article = data;
+                console.log(data)
+                $location.path('article');
+            })
         }
         return model;
     });
