@@ -23,4 +23,8 @@ angular.module('rss')
     // $scope.safeTitle = $sce.trustAsHtml(ArticleModel.article);
     $scope.safeContent = $sce.trustAsHtml(ArticleModel.article.content);
     $scope.article= ArticleModel.article;
+
+    $scope.goBack = function() {
+        $location.path('/');
+    }
 })

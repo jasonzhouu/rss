@@ -1,7 +1,12 @@
 <article class="weui-article">
-    <div style="color: #33cc99;">
-            <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="position: relative;left: 250px;">
-        </div>
+    <div style="margin-bottom: 50px">
+        <i class="fa fa-backward" aria-hidden="true" ng-click="goBack()"></i>
+        <i style="position: relative;left: 50px;">
+            新闻浏览
+        </i>
+        <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="position: relative;left: 160px;">
+    </div>
+    <div style="color: #33cc99;"> </div>
     <h1>
         <!-- <ng-bind-html ng-bind-html="safeTitle"> </ng-bind-html> -->
         {{article.title}}
