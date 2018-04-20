@@ -32,6 +32,8 @@
 <script src="script/article.controller.js"></script>
 <script src="script/article.model.js"></script>
 <script src="script/user.controller.js"></script>
+<script src="script/reading_history.controller.js"></script>
+<script src="script/reading_history.model.js"></script>
 <script src="script/user.model.js"></script>
 <script src="script/login.js"></script>
 <!-- end script -->

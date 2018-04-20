@@ -25,6 +25,10 @@ angular.module('rss', [
             templateUrl: 'views/login.html',
             controller: 'LoginController'
         }).
+        when('/reading_history', {
+            templateUrl: 'views/reading_history.html',
+            controller: 'ReadingHistoryController'
+        }).
         otherwise({
             redirectTo: '/'
         });
