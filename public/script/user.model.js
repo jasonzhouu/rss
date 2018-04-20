@@ -1,5 +1,5 @@
 angular.module('rss')
-    .factory('UserModel', function ($http, $location) {
+    .factory('UserModel', function ($http, $location, StaredArticlesModel) {
         let model = {};
 
         model.getStarList = function() {
@@ -21,6 +21,7 @@ angular.module('rss')
         model.getStarList = function() {
             $http.get('/get_stared_list').then(({data})=>{
                 console.log('stared article', data);
+                StaredArticlesModel.article_list = data;
                 $location.path('stared_articles');
             })
         }

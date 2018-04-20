@@ -35,5 +35,4 @@ Route::get('/reading_history', 'ReadingHistoryController@get_reading_history_lis
 
 // 收藏文章
 Route::post('/star', 'StarController@star');
-Route::post('/unstar', 'StarController@unstar');
 Route::get('/get_stared_list', 'StarController@get_stared_list');

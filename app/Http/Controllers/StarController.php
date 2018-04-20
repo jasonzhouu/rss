@@ -33,13 +33,8 @@ class StarController extends Controller
         return compact('exists');
     }
 
-    public function unstar()
-    {
-
-    }
-
     public function get_stared_list()
     {
-
+        return StarsArticle::where('star', 1)->with('article')->get();
     }
 }
