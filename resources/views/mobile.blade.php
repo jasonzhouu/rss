@@ -31,6 +31,7 @@
 <script src="script/course.directive.js"></script>
 <script src="script/article.controller.js"></script>
 <script src="script/article.model.js"></script>
+<script src="script/user.controller.js"></script>
 <script src="script/login.js"></script>
 <!-- end script -->
 </body>

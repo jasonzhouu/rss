@@ -1,9 +1,7 @@
-<article class="weui-article">
-    article
-    <h1>
-        {{article.title}}
-    </h1>
-    <section>
-        {{article.content}}
-    </section>
-</article>
+<md-list>
+    <md-list-item ng-click="model.showUserDetailDialog(user.id)" ng-repeat="user in model.userList">
+        <img src="/admin/assets/images/avatar-jobs.png" alt="{{user.username}}" class="md-avatar">
+        <span>{{user.username}}</span>
+        <md-icon md-svg-icon="/admin/assets/icons/chat.svg" aria-label="detail" class="md-secondary"></md-icon>
+    </md-list-item>
+</md-list>

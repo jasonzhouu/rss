@@ -17,6 +17,10 @@ angular.module('rss', [
             templateUrl: 'views/article.html',
             controller: 'ArticleController'
         }).
+        when('/user', {
+            templateUrl: 'views/user.html',
+            controller: 'UserController'
+        }).
         when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController'
