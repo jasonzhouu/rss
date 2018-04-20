@@ -1,5 +1,5 @@
 angular.module('rss')
-.controller('ArticleController', function($scope, ArticleModel, $location) {
+.controller('ArticleController', function($scope, ArticleModel, $location, $sce) {
     $scope.name = 'article page'
     console.log($scope.name)
     // $scope.model = ArticleModel;
@@ -19,5 +19,8 @@ angular.module('rss')
       }
 
     console.log("********", ArticleModel.article)
+
+    // $scope.safeTitle = $sce.trustAsHtml(ArticleModel.article);
+    $scope.safeContent = $sce.trustAsHtml(ArticleModel.article.content);
     $scope.article= ArticleModel.article;
 })

@@ -1,11 +1,13 @@
 <article class="weui-article">
     <div style="color: #33cc99;">
-            <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="position: relative;">
+            <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="position: relative;left: 250px;">
         </div>
     <h1>
+        <!-- <ng-bind-html ng-bind-html="safeTitle"> </ng-bind-html> -->
         {{article.title}}
     </h1>
     <section>
-        {{article.content}}
+        <ng-bind-html ng-bind-html="safeContent"> </ng-bind-html> 
+        <!-- {{article.content}} -->
     </section>
 </article>
