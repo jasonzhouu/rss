@@ -1,5 +1,5 @@
 angular.module('rss')
-.controller('TabController', function($scope, $location) {
+.controller('TabController', function($scope, $location, ArticlesListModel) {
     function tabChange() {
         switch ($location.path().split('/')[1]) {
           case '':
@@ -16,4 +16,9 @@ angular.module('rss')
       tabChange();
       // 监听路由变化，按钮状态由路由决定
       $scope.$on('$locationChangeSuccess', tabChange);
+
+      $scope.refresh = function() {
+        ArticlesListModel.article_list = [];
+        ArticlesListModel.getMoreArticle();
+      }
 })
