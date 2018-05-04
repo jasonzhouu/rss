@@ -23,7 +23,7 @@ angular.module('rss')
                     model.article_list = [...model.article_list, ...data.data]
                     convert_to_safe_content()
                     model.pageInformation.current_page = data.current_page;
-                    model.pageInformation.still_have_next_or_not = (data.to != data.total_page);
+                    model.pageInformation.still_have_next_or_not = (data.to != data.total);
                     model.pageInformation.loading = false;
                     console.log(model);
                 })
