@@ -27,6 +27,6 @@ class ArticleController extends Controller
             $reading_history->article_id = $article_id;
             $reading_history->save();
         }
-        return Article::find($article_id);
+        return Article::with('starsArticle')->find($article_id);
     }
 }
