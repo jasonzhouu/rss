@@ -19,3 +19,8 @@
  content: "\2605";
  position: absolute;
 }
+
+img {
+  width: 100%;
+  height: auto;
+}
