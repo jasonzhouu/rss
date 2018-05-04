@@ -1,5 +1,5 @@
 angular.module('rss')
-    .factory('ArticlesListModel', function ($http, ArticleModel) {
+    .factory('ArticlesListModel', function ($http, ArticleModel, $sce) {
         let model = {};
 
         model.article_list= [];
@@ -10,11 +10,18 @@ angular.module('rss')
             loading: false,
         }
 
+        function convert_to_safe_content() {
+            model.article_list.forEach((value, index, arr) => {
+                arr[index].content = $sce.trustAsHtml(arr[index].content)
+            })
+        }
+
         model.getMoreArticle = function() {
             if(model.pageInformation.still_have_next_or_not == true && model.pageInformation.loading == false) {
                 model.pageInformation.loading = true;
                 return $http.get(`/article_list?page=${model.pageInformation.current_page + 1}`).then(({data})=>{
                     model.article_list = [...model.article_list, ...data.data]
+                    convert_to_safe_content()
                     model.pageInformation.current_page = data.current_page;
                     model.pageInformation.still_have_next_or_not = (data.to != data.total_page);
                     model.pageInformation.loading = false;

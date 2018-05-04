@@ -13,7 +13,8 @@
                         {{article.title}}
                     </h4>
                     <p class="weui-media-box__desc">
-                        {{article.content}}
+                        <ng-bind-html ng-bind-html="article.content"> </ng-bind-html> 
+                        <!-- {{article.content}} -->
                     </p>
                 </div>
             </div>
