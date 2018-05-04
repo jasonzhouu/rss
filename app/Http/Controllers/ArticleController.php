@@ -15,10 +15,18 @@ class ArticleController extends Controller
 
     public function get_article_detail($article_id)
     {
-        $reading_history = new ReadingHistoryArticle;
-        $reading_history->user_id = 0;
-        $reading_history->article_id = $article_id;
-        $reading_history->save();
+        // TODO: 验证登录用户是否阅读过这一篇文章，而不是ID=0的用户
+        $exists = ReadingHistoryArticle::where([
+            ['user_id', 0],
+            ['article_id', $article_id]
+        ])->exists();
+        if(!$exists){
+            $reading_history = new ReadingHistoryArticle;
+            // TODO: 用登录用户的 id，而不是0
+            $reading_history->user_id = 0;
+            $reading_history->article_id = $article_id;
+            $reading_history->save();
+        }
         return Article::find($article_id);
     }
 }
