@@ -23,7 +23,7 @@ class ArticleController extends Controller
         if(!$exists){
             $reading_history = new ReadingHistoryArticle;
             // TODO: 用登录用户的 id，而不是0
-            $reading_history->user_id = 0;
+            $reading_history->user_id = 1;
             $reading_history->article_id = $article_id;
             $reading_history->save();
         }

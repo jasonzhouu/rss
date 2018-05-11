@@ -15,8 +15,9 @@ class CreateRecommendArticles extends Migration
     {
         Schema::create('recommend_articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('open_id');
+            $table->integer('user_id');
             $table->integer('article_id');
+            $table->char('similarity');
             $table->timestamps();
         });
     }
