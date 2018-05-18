@@ -4,7 +4,11 @@
         <span style="padding: 0% 60px;">
             新闻浏览
         </span>
-        <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="color:red;">
+        <span style="color: gold;" ng-click="starClick()">
+            <i class="fa fa-star" aria-hidden="true" ng-show="star"></i>
+            <i class="fa fa-star-o" aria-hidden="true" ng-hide="star"></i>
+        </span>
+        <!-- <input class="star" type="checkbox" title="bookmark page" ng-change="starClick()" ng-model="star" style="color:red;"> -->
     </div>
     <h1>
         <!-- <ng-bind-html ng-bind-html="safeTitle"> </ng-bind-html> -->
