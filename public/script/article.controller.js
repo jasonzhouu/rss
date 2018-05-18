@@ -1,5 +1,7 @@
 angular.module('rss')
-.controller('ArticleController', function($scope, ArticleModel, $location, $sce) {
+.controller('ArticleController', function($scope, ArticleModel, $location, $sce, TabModel) {
+    TabModel.showTab = false;
+    console.log("TabModel.showTab", TabModel.showTab)
     $scope.name = 'article page'
     console.log($scope.name)
     // $scope.model = ArticleModel;
