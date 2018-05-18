@@ -10,7 +10,7 @@ class ArticleController extends Controller
 {
     public function get_article_list()
     {
-        return Article::paginate(15);
+        return Article::select('id', 'title')->paginate(15);
     }
 
     public function get_article_detail($article_id)
