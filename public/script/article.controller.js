@@ -1,7 +1,8 @@
 angular.module('rss')
-.controller('ArticleController', function($scope, ArticleModel, $location, $sce, TabModel) {
+.controller('ArticleController', function($scope, ArticleModel, $location, $sce, TabModel, $window) {
+    // 用于隐藏 tab
     TabModel.showTab = false;
-    console.log("TabModel.showTab", TabModel.showTab)
+
     $scope.name = 'article page'
     console.log($scope.name)
     // $scope.model = ArticleModel;
@@ -30,6 +31,7 @@ angular.module('rss')
         $scope.star = ArticleModel.article.stars_article.star ? true : false;
 
     $scope.goBack = function() {
-        $location.path('/');
+        // $location.path('/');
+        $window.history.back();
     }
 })
