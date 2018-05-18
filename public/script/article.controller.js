@@ -26,7 +26,10 @@ angular.module('rss')
     $scope.article= ArticleModel.article;
 
 
-    $scope.star = ArticleModel.article.stars_article.star;
+    if(ArticleModel.article.stars_article)
+        $scope.star = ArticleModel.article.stars_article.star;
+    else 
+        $scope.star = 0;
 
     $scope.goBack = function() {
         $window.history.back();
