@@ -1,8 +1,15 @@
 angular.module('rss')
-.controller('TabController', function($scope, $location, ArticlesListModel, TabModel) {
+.controller('TabController', function($scope, $location, ArticlesListModel, $rootScope) {
   // 当 showTab = false 时，将 tab 栏隐藏
-  $scope.model = TabModel;
-  console.log("TabModel.showTab", TabModel.showTab)
+  $scope.showTab = true
+  console.log("location", $location.path())
+  // $locationChangeSuccess
+  $rootScope.$on('$locationChangeSuccess', ()=>{
+    if($location.path() == "/" || $location.path() == "/user")
+      $scope.showTab = true
+    else 
+      $scope.showTab = false
+  })
 
   function tabChange() {
       switch ($location.path().split('/')[1]) {

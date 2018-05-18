@@ -1,8 +1,5 @@
 angular.module('rss')
-.controller('ArticleController', function($scope, ArticleModel, $location, $sce, TabModel, $window) {
-    // 用于隐藏 tab
-    TabModel.showTab = false;
-
+.controller('ArticleController', function($scope, ArticleModel, $location, $sce, $window) {
     $scope.name = 'article page'
     console.log($scope.name)
     // $scope.model = ArticleModel;
