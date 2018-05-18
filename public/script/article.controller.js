@@ -28,7 +28,6 @@ angular.module('rss')
         $scope.star = ArticleModel.article.stars_article.star ? true : false;
 
     $scope.goBack = function() {
-        // $location.path('/');
         $window.history.back();
     }
 })
