@@ -17,7 +17,7 @@ class ArticleController extends Controller
     {
         // TODO: 验证登录用户是否阅读过这一篇文章，而不是ID=0的用户
         $exists = ReadingHistoryArticle::where([
-            ['user_id', 1],
+            // ['user_id', 1],
             ['article_id', $article_id]
         ])->exists();
         if(!$exists){
