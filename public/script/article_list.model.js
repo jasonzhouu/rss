@@ -11,8 +11,9 @@ angular.module('rss')
         }
 
         function convert_to_safe_content(data) {
-            data.forEach((value, index, arr) => {
-                arr[index].content = $sce.trustAsHtml(arr[index].content)
+            return data.map((value, index, arr) => {
+                arr[index].article.content = $sce.trustAsHtml(arr[index].article.content)
+                return arr[index].article
             })
         }
 
@@ -20,12 +21,13 @@ angular.module('rss')
             if(model.pageInformation.still_have_next_or_not == true && model.pageInformation.loading == false) {
                 model.pageInformation.loading = true;
                 return $http.get(`/article_list?page=${model.pageInformation.current_page + 1}`).then(({data})=>{
-                    convert_to_safe_content(data.data)
-                    model.article_list = [...model.article_list, ...data.data]
+                    // console.log("article list ========== \n", data.data)
+                    let safe_content = convert_to_safe_content(data.data)
+                    console.log('safe_content ======= \n', safe_content)
+                    model.article_list = [...model.article_list, ...safe_content]
                     model.pageInformation.current_page = data.current_page;
                     model.pageInformation.still_have_next_or_not = (data.to != data.total);
                     model.pageInformation.loading = false;
-                    console.log(model);
                 })
             }
             else {
