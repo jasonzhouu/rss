@@ -8,11 +8,7 @@ use App\ReadingHistoryArticle;
 
 class ArticleController extends Controller
 {
-    public function get_article_list()
-    {
-        return Article::select('id', 'title')->paginate(15);
-    }
-
+    // 返回文章全文
     public function get_article_detail($article_id)
     {
         // TODO: 验证登录用户是否阅读过这一篇文章，而不是ID=0的用户
