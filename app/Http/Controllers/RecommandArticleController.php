@@ -11,7 +11,6 @@ class RecommandArticleController extends Controller
     public function get_article_list()
     {
         return RecommendArticle::with('article')
-                                ->orderBy('similarity')
                                 ->paginate(15);
     }
 }
