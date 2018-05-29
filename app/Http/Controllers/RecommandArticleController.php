@@ -12,5 +12,6 @@ class RecommandArticleController extends Controller
     {
         return RecommendArticle::with('article')
                                 ->paginate(15);
+        // @TODO 筛选出当天的文章
     }
 }
