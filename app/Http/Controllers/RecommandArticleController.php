@@ -10,10 +10,9 @@ class RecommandArticleController extends Controller
     // 返回推荐文章列表
     public function get_article_list()
     {
-        $date = date('Y-m-d', time());
+        //$date = date('Y-m-d');
         return RecommendArticle::with('article')
-        ->whereDate('created_at', $date)
+        ->whereDate('created_at', '2018-06-01')
         ->paginate(15);
-        // @TODO 筛选出当天的文章
     }
 }
