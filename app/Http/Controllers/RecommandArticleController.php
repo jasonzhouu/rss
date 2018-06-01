@@ -9,16 +9,22 @@ class RecommandArticleController extends Controller
 {
     public function get_article_list()
     {
-        $recommendArticlesCollection = RecommendArticle::limit(5)->get();
-	$articleArray = $recommendArticlesCollection->toArray();
-	foreach($articleArray as $x=>$item)
-	{
-		if(isset($item['id']))
-		{
-			$article = RecommendArticle::where('id', $item['id'])->first();
+        $recommendArticles = RecommendArticle::with('article')
+                           ->where([
+                               ['have_shown_before', FALSE]
+                           ])
+                           ->whereDate('created_at', '2018-06-01')
+                           ->paginate(15);
+
+        $articleArray = $recommendArticles->toArray()['data'];
+        // 返回文章列表前，将 have_show_before 标签改为 TRUE
+        foreach($articleArray as $key=>$item){
+            $article = RecommendArticle::where('id', $item['id'])->first();
 			$article->have_shown_before = TRUE;
 			$article->save();
-		}
-	}
+        }
+
+        //返回文章列表
+        return $recommendArticles;
     }
 }
