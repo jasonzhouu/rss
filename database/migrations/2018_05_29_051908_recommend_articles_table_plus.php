@@ -20,6 +20,7 @@ class RecommendArticlesTablePlus extends Migration
             $table->integer('user_id');
             $table->integer('article_id');
             $table->char('similarity');
+            $table->boolean('have_shown_before');
             $table->timestamps();
         });
     }
