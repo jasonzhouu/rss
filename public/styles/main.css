@@ -39,3 +39,11 @@ i.goback {
   color: black;
   font-size: 20px;
 }
+
+article.weui-article {
+  padding: 0;
+}
+
+.article-title, .article-content {
+  padding: 10px 15px;
+}
