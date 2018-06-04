@@ -48,6 +48,10 @@ article.weui-article {
   padding: 15px;
 }
 
+h1.article-title {
+  margin-bottom: 0;
+}
+
 .article-star {
   color: gold;
   text-align: right;
