@@ -47,3 +47,8 @@ article.weui-article {
 .article-title, .article-content {
   padding: 10px 15px;
 }
+
+.article-star {
+  color: gold;
+  text-align: right;
+}
