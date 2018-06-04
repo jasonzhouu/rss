@@ -9,12 +9,12 @@ class RecommandArticleController extends Controller
 {
     public function get_article_list()
     {
-        $date = date('Y-m-d');
+        //$date = date('Y-m-d');
         $recommendArticles = RecommendArticle::with('article')
                            ->where([
                                ['have_shown_before', FALSE]
                            ])
-                           ->whereDate('created_at', $date)
+                           // ->whereDate('created_at', $date)
                            ->paginate(10);
 
         $articleArray = $recommendArticles->toArray()['data'];
