@@ -24,3 +24,9 @@ img {
   width: 100%;
   height: auto;
 }
+
+.weui-panel__hd, .weui-cells__title {
+  color: #09bb07;
+  font-size: 1em;
+  text-align: center;
+}
