@@ -15,7 +15,7 @@ class RecommandArticleController extends Controller
                                ['have_shown_before', FALSE]
                            ])
                            ->whereDate('created_at', $date)
-                           ->paginate(15);
+                           ->paginate(10);
 
         $articleArray = $recommendArticles->toArray()['data'];
         // 返回文章列表前，将 have_show_before 标签改为 TRUE
