@@ -30,3 +30,7 @@ img {
   font-size: 1em;
   text-align: center;
 }
+
+.weui-cells {
+  margin: 0;
+}
