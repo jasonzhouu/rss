@@ -60,3 +60,7 @@ h1.article-title {
 .page-title {
   font-size: 16px;
 }
+
+.left {
+  float: left;
+}
