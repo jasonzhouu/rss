@@ -27,7 +27,7 @@ img {
 
 .weui-panel__hd, .weui-cells__title {
   color: #09bb07;
-  font-size: 1em;
+  font-size: 16px;
   text-align: center;
 }
 
@@ -45,10 +45,14 @@ article.weui-article {
 }
 
 .article-title, .article-content {
-  padding: 10px 15px;
+  padding: 15px;
 }
 
 .article-star {
   color: gold;
   text-align: right;
+}
+
+.page-title {
+  font-size: 16px;
 }
