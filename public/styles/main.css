@@ -34,3 +34,8 @@ img {
 .weui-cells {
   margin: 0;
 }
+
+i.goback {
+  color: black;
+  font-size: 20px;
+}
